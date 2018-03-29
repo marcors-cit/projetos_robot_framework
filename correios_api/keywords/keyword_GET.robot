@@ -1,13 +1,12 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
-...               The system specific keywords created here form our own
-...               domain specific language. They utilize keywords provided
-...               by the imported SeleniumLibrary.
-Library         SeleniumLibrary
-Library         DebugLibrary
-Library         RequestsLibrary
-Library         Collections
-Resource        ../contrib/contrib_screenshot.robot
+Documentation       A resource file with reusable keywords and variables.
+...                 The system specific keywords created here form our own
+...                 domain specific language. They utilize keywords provided
+...                 by the imported SeleniumLibrary.
+Library             SeleniumLibrary
+Library             DebugLibrary
+Library             RequestsLibrary
+Library             Collections
 
 
 *** Variables ***
