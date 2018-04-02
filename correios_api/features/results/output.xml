@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180329 15:09:49.558" generator="Robot 3.0.2 (Python 3.5.2 on linux)">
-<suite id="s1" source="/projetos_robot_framework/correios_api/features/GET.robot" name="GET">
-<test id="s1-t1" name="1. Cenário: Buscar por CEP válido (200 - OK)">
-<kw library="keyword_GET" name="Dado que esteja conectado na API &quot;viacep&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<robot generator="Robot 3.0.2 (Python 3.5.2 on linux)" generated="20180402 10:08:46.580">
+<suite name="GET" id="s1" source="/projetos_robot_framework/correios_api/features/GET.robot">
+<test name="1. Cenário: Buscar por CEP válido (200 - OK)" id="s1-t1">
+<kw name="Dado que esteja conectado na API &quot;viacep&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_VALIDO}/${HOST_cont}</arg>
+<arg>disable_warnings=1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:49.790">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:49.790" endtime="20180329 15:09:49.791"></status>
+<msg level="INFO" timestamp="20180402 10:08:46.818">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:46.817" status="PASS" endtime="20180402 10:08:46.818"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:49.790" endtime="20180329 15:09:49.791"></status>
+<status starttime="20180402 10:08:46.817" status="PASS" endtime="20180402 10:08:46.818"></status>
 </kw>
-<kw library="keyword_GET" name="Quando o usuário consultar o CEP &quot;13086-510&quot;">
-<kw library="RequestsLibrary" name="Get Request">
+<kw name="Quando o usuário consultar o CEP &quot;13086-510&quot;" library="keyword_GET">
+<kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
@@ -25,18 +26,16 @@
 <assign>
 <var>${RETORNO_GET}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 15:09:50.663">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
-<msg level="INFO" timestamp="20180329 15:09:50.663">/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)</msg>
-<msg level="INFO" timestamp="20180329 15:09:50.663">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:49.791" endtime="20180329 15:09:50.663"></status>
+<msg level="INFO" timestamp="20180402 10:08:47.686">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
+<msg level="INFO" timestamp="20180402 10:08:47.686">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
+<status starttime="20180402 10:08:46.819" status="PASS" endtime="20180402 10:08:47.687"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Resposta: ${RETORNO_GET.text}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.664">Resposta: {
+<msg level="INFO" timestamp="20180402 10:08:47.687">Resposta: {
   "cep": "13086-510",
   "logradouro": "Rua Doutor Ricardo Benetton Martins",
   "complemento": "",
@@ -47,131 +46,132 @@
   "ibge": "3509502",
   "gia": "2446"
 }</msg>
-<status status="PASS" starttime="20180329 15:09:50.663" endtime="20180329 15:09:50.664"></status>
+<status starttime="20180402 10:08:47.687" status="PASS" endtime="20180402 10:08:47.687"></status>
 </kw>
-<kw library="BuiltIn" name="Set Test Variable">
+<kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${RETORNO_GET}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.664">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:50.664" endtime="20180329 15:09:50.664"></status>
+<msg level="INFO" timestamp="20180402 10:08:47.688">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
+<status starttime="20180402 10:08:47.688" status="PASS" endtime="20180402 10:08:47.688"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:49.791" endtime="20180329 15:09:50.664"></status>
+<status starttime="20180402 10:08:46.818" status="PASS" endtime="20180402 10:08:47.688"></status>
 </kw>
-<kw library="keyword_GET" name="Então deve ser retornado status &quot;200&quot;">
-<kw library="BuiltIn" name="Should Be Equal As Strings">
+<kw name="Então deve ser retornado status &quot;200&quot;" library="keyword_GET">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${RETORNO_GET.status_code}</arg>
 <arg>${STATUS_200}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.665">Argument types are:
+<msg level="INFO" timestamp="20180402 10:08:47.689">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:50.665" endtime="20180329 15:09:50.665"></status>
+<status starttime="20180402 10:08:47.689" status="PASS" endtime="20180402 10:08:47.689"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Status Code Retornado: ${RETORNO_GET.status_code} -- Status Code Esperado: ${STATUS_200}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.665">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
-<status status="PASS" starttime="20180329 15:09:50.665" endtime="20180329 15:09:50.665"></status>
+<msg level="INFO" timestamp="20180402 10:08:47.689">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
+<status starttime="20180402 10:08:47.689" status="PASS" endtime="20180402 10:08:47.689"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.664" endtime="20180329 15:09:50.666"></status>
+<status starttime="20180402 10:08:47.688" status="PASS" endtime="20180402 10:08:47.690"></status>
 </kw>
-<kw library="keyword_GET" name="E o CEP apresentado deve ser o mesmo informado na consulta">
-<kw library="BuiltIn" name="Should Be Equal As Strings">
+<kw name="E o CEP apresentado deve ser o mesmo informado na consulta" library="keyword_GET">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${RETORNO_GET.status_code}</arg>
 <arg>${STATUS_200}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.666">Argument types are:
+<msg level="INFO" timestamp="20180402 10:08:47.690">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:50.666" endtime="20180329 15:09:50.666"></status>
+<status starttime="20180402 10:08:47.690" status="PASS" endtime="20180402 10:08:47.691"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.666" endtime="20180329 15:09:50.666"></status>
+<status starttime="20180402 10:08:47.690" status="PASS" endtime="20180402 10:08:47.691"></status>
 </kw>
-<kw library="keyword_GET" name="E o logradouro: &quot;Rua Doutor Ricardo Benetton Martins&quot;">
-<kw library="Collections" name="Dictionary Should Contain Item">
+<kw name="E o logradouro: &quot;Rua Doutor Ricardo Benetton Martins&quot;" library="keyword_GET">
+<kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key``/``value`` must be found in a `dictionary`.</doc>
 <arguments>
 <arg>${RETORNO_GET.json()}</arg>
 <arg>logradouro</arg>
 <arg>${LOGRADOURO_CEP_VALIDO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 15:09:50.667" endtime="20180329 15:09:50.667"></status>
+<status starttime="20180402 10:08:47.691" status="PASS" endtime="20180402 10:08:47.692"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.667" endtime="20180329 15:09:50.667"></status>
+<status starttime="20180402 10:08:47.691" status="PASS" endtime="20180402 10:08:47.692"></status>
 </kw>
-<kw library="keyword_GET" name="E o bairro: &quot;Polo II de Alta Tecnologia (Campinas)&quot;">
-<kw library="Collections" name="Dictionary Should Contain Item">
+<kw name="E o bairro: &quot;Polo II de Alta Tecnologia (Campinas)&quot;" library="keyword_GET">
+<kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key``/``value`` must be found in a `dictionary`.</doc>
 <arguments>
 <arg>${RETORNO_GET.json()}</arg>
 <arg>bairro</arg>
 <arg>${BAIRRO_CEP_VALIDO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 15:09:50.668" endtime="20180329 15:09:50.668"></status>
+<status starttime="20180402 10:08:47.692" status="PASS" endtime="20180402 10:08:47.692"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.667" endtime="20180329 15:09:50.668"></status>
+<status starttime="20180402 10:08:47.692" status="PASS" endtime="20180402 10:08:47.693"></status>
 </kw>
-<kw library="keyword_GET" name="E a localidade: &quot;Campinas&quot;">
-<kw library="Collections" name="Dictionary Should Contain Item">
+<kw name="E a localidade: &quot;Campinas&quot;" library="keyword_GET">
+<kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key``/``value`` must be found in a `dictionary`.</doc>
 <arguments>
 <arg>${RETORNO_GET.json()}</arg>
 <arg>localidade</arg>
 <arg>${LOCALIDADE_CEP_VALIDO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 15:09:50.669" endtime="20180329 15:09:50.669"></status>
+<status starttime="20180402 10:08:47.693" status="PASS" endtime="20180402 10:08:47.693"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.668" endtime="20180329 15:09:50.669"></status>
+<status starttime="20180402 10:08:47.693" status="PASS" endtime="20180402 10:08:47.693"></status>
 </kw>
-<kw library="keyword_GET" name="E o uf: &quot;SP&quot;">
-<kw library="Collections" name="Dictionary Should Contain Item">
+<kw name="E o uf: &quot;SP&quot;" library="keyword_GET">
+<kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key``/``value`` must be found in a `dictionary`.</doc>
 <arguments>
 <arg>${RETORNO_GET.json()}</arg>
 <arg>uf</arg>
 <arg>${UF_CEP_VALIDO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 15:09:50.669" endtime="20180329 15:09:50.670"></status>
+<status starttime="20180402 10:08:47.694" status="PASS" endtime="20180402 10:08:47.694"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.669" endtime="20180329 15:09:50.670"></status>
+<status starttime="20180402 10:08:47.694" status="PASS" endtime="20180402 10:08:47.694"></status>
 </kw>
 <tags>
 <tag>smoke</tag>
 </tags>
-<status critical="yes" status="PASS" starttime="20180329 15:09:49.789" endtime="20180329 15:09:50.670"></status>
+<status critical="yes" starttime="20180402 10:08:46.816" status="PASS" endtime="20180402 10:08:47.694"></status>
 </test>
-<test id="s1-t2" name="2. Cenário: Buscar por CEP inexistente (200 - OK)">
-<kw library="keyword_GET" name="Dado que esteja conectado na API &quot;viacep&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<test name="2. Cenário: Buscar por CEP inexistente (200 - OK)" id="s1-t2">
+<kw name="Dado que esteja conectado na API &quot;viacep&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_VALIDO}/${HOST_cont}</arg>
+<arg>disable_warnings=1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.672">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:50.671" endtime="20180329 15:09:50.672"></status>
+<msg level="INFO" timestamp="20180402 10:08:47.696">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:47.696" status="PASS" endtime="20180402 10:08:47.696"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.671" endtime="20180329 15:09:50.672"></status>
+<status starttime="20180402 10:08:47.696" status="PASS" endtime="20180402 10:08:47.696"></status>
 </kw>
-<kw library="keyword_GET" name="Quando o usuário consultar o CEP &quot;99999-999&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<kw name="Quando o usuário consultar o CEP &quot;99999-999&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_INEXISTENTE}/${HOST_cont}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:50.673">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/99999-999/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:50.672" endtime="20180329 15:09:50.673"></status>
+<msg level="INFO" timestamp="20180402 10:08:47.697">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/99999-999/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:47.697" status="PASS" endtime="20180402 10:08:47.697"></status>
 </kw>
-<kw library="RequestsLibrary" name="Get Request">
+<kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
@@ -181,95 +181,94 @@
 <assign>
 <var>${RETORNO_GET}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 15:09:51.442">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
-<msg level="INFO" timestamp="20180329 15:09:51.442">/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)</msg>
-<msg level="INFO" timestamp="20180329 15:09:51.442">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:50.673" endtime="20180329 15:09:51.442"></status>
+<msg level="INFO" timestamp="20180402 10:08:48.477">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
+<msg level="INFO" timestamp="20180402 10:08:48.477">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
+<status starttime="20180402 10:08:47.697" status="PASS" endtime="20180402 10:08:48.477"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Resposta: ${RETORNO_GET.text}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.443">Resposta: {
+<msg level="INFO" timestamp="20180402 10:08:48.478">Resposta: {
   "erro": true
 }</msg>
-<status status="PASS" starttime="20180329 15:09:51.442" endtime="20180329 15:09:51.443"></status>
+<status starttime="20180402 10:08:48.477" status="PASS" endtime="20180402 10:08:48.478"></status>
 </kw>
-<kw library="BuiltIn" name="Set Test Variable">
+<kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${RETORNO_GET}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.443">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:51.443" endtime="20180329 15:09:51.443"></status>
+<msg level="INFO" timestamp="20180402 10:08:48.478">${RETORNO_GET} = &lt;Response [200]&gt;</msg>
+<status starttime="20180402 10:08:48.478" status="PASS" endtime="20180402 10:08:48.478"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:50.672" endtime="20180329 15:09:51.443"></status>
+<status starttime="20180402 10:08:47.697" status="PASS" endtime="20180402 10:08:48.478"></status>
 </kw>
-<kw library="keyword_GET" name="Então deve ser retornado status &quot;200&quot;">
-<kw library="BuiltIn" name="Should Be Equal As Strings">
+<kw name="Então deve ser retornado status &quot;200&quot;" library="keyword_GET">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${RETORNO_GET.status_code}</arg>
 <arg>${STATUS_200}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.444">Argument types are:
+<msg level="INFO" timestamp="20180402 10:08:48.479">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:51.444" endtime="20180329 15:09:51.444"></status>
+<status starttime="20180402 10:08:48.479" status="PASS" endtime="20180402 10:08:48.479"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Status Code Retornado: ${RETORNO_GET.status_code} -- Status Code Esperado: ${STATUS_200}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.444">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
-<status status="PASS" starttime="20180329 15:09:51.444" endtime="20180329 15:09:51.444"></status>
+<msg level="INFO" timestamp="20180402 10:08:48.480">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
+<status starttime="20180402 10:08:48.480" status="PASS" endtime="20180402 10:08:48.480"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:51.443" endtime="20180329 15:09:51.444"></status>
+<status starttime="20180402 10:08:48.479" status="PASS" endtime="20180402 10:08:48.480"></status>
 </kw>
-<kw library="keyword_GET" name="E o erro: true">
-<kw library="Collections" name="Dictionary Should Contain Item">
+<kw name="E o erro: true" library="keyword_GET">
+<kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key``/``value`` must be found in a `dictionary`.</doc>
 <arguments>
 <arg>${RETORNO_GET.json()}</arg>
 <arg>erro</arg>
 <arg>${ERRO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 15:09:51.445" endtime="20180329 15:09:51.445"></status>
+<status starttime="20180402 10:08:48.481" status="PASS" endtime="20180402 10:08:48.481"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:51.445" endtime="20180329 15:09:51.445"></status>
+<status starttime="20180402 10:08:48.480" status="PASS" endtime="20180402 10:08:48.481"></status>
 </kw>
 <tags>
 <tag>inexistente</tag>
 </tags>
-<status critical="yes" status="PASS" starttime="20180329 15:09:50.671" endtime="20180329 15:09:51.445"></status>
+<status critical="yes" starttime="20180402 10:08:47.695" status="PASS" endtime="20180402 10:08:48.481"></status>
 </test>
-<test id="s1-t3" name="3. Cenário: Buscar por CEP inválido (400 - Bad Request)">
-<kw library="keyword_GET" name="Dado que esteja conectado na API &quot;viacep&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<test name="3. Cenário: Buscar por CEP inválido (400 - Bad Request)" id="s1-t3">
+<kw name="Dado que esteja conectado na API &quot;viacep&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_VALIDO}/${HOST_cont}</arg>
+<arg>disable_warnings=1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.447">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:51.447" endtime="20180329 15:09:51.447"></status>
+<msg level="INFO" timestamp="20180402 10:08:48.483">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:48.483" status="PASS" endtime="20180402 10:08:48.483"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:51.446" endtime="20180329 15:09:51.447"></status>
+<status starttime="20180402 10:08:48.482" status="PASS" endtime="20180402 10:08:48.483"></status>
 </kw>
-<kw library="keyword_GET" name="Quando o usuário consultar o CEP &quot;$@%-*()&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<kw name="Quando o usuário consultar o CEP &quot;$@%-*()&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_INVALIDO}/${HOST_cont}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:51.448">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/$@%-*()/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:51.448" endtime="20180329 15:09:51.448"></status>
+<msg level="INFO" timestamp="20180402 10:08:48.484">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/$@%-*()/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:48.484" status="PASS" endtime="20180402 10:08:48.484"></status>
 </kw>
-<kw library="RequestsLibrary" name="Get Request">
+<kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
@@ -279,18 +278,16 @@
 <assign>
 <var>${RETORNO_GET}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 15:09:52.217">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
-<msg level="INFO" timestamp="20180329 15:09:52.217">/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)</msg>
-<msg level="INFO" timestamp="20180329 15:09:52.217">${RETORNO_GET} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:51.448" endtime="20180329 15:09:52.218"></status>
+<msg level="INFO" timestamp="20180402 10:08:49.529">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
+<msg level="INFO" timestamp="20180402 10:08:49.529">${RETORNO_GET} = &lt;Response [400]&gt;</msg>
+<status starttime="20180402 10:08:48.484" status="PASS" endtime="20180402 10:08:49.529"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Resposta: ${RETORNO_GET.text}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.218">Resposta: &lt;html&gt;
+<msg level="INFO" timestamp="20180402 10:08:49.530">Resposta: &lt;html&gt;
 &lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;
 &lt;body bgcolor="white"&gt;
 &lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt;
@@ -298,69 +295,70 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </msg>
-<status status="PASS" starttime="20180329 15:09:52.218" endtime="20180329 15:09:52.218"></status>
+<status starttime="20180402 10:08:49.529" status="PASS" endtime="20180402 10:08:49.530"></status>
 </kw>
-<kw library="BuiltIn" name="Set Test Variable">
+<kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${RETORNO_GET}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.219">${RETORNO_GET} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:52.218" endtime="20180329 15:09:52.219"></status>
+<msg level="INFO" timestamp="20180402 10:08:49.530">${RETORNO_GET} = &lt;Response [400]&gt;</msg>
+<status starttime="20180402 10:08:49.530" status="PASS" endtime="20180402 10:08:49.530"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:51.448" endtime="20180329 15:09:52.219"></status>
+<status starttime="20180402 10:08:48.483" status="PASS" endtime="20180402 10:08:49.530"></status>
 </kw>
-<kw library="keyword_GET" name="Então deve ser retornado status &quot;400&quot;">
-<kw library="BuiltIn" name="Should Be Equal As Strings">
+<kw name="Então deve ser retornado status &quot;400&quot;" library="keyword_GET">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${RETORNO_GET.status_code}</arg>
 <arg>${STATUS_400}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.220">Argument types are:
+<msg level="INFO" timestamp="20180402 10:08:49.531">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:52.219" endtime="20180329 15:09:52.220"></status>
+<status starttime="20180402 10:08:49.531" status="PASS" endtime="20180402 10:08:49.531"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Status Code Retornado: ${RETORNO_GET.status_code} -- Status Code Esperado: ${STATUS_400}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.220">Status Code Retornado: 400 -- Status Code Esperado: 400</msg>
-<status status="PASS" starttime="20180329 15:09:52.220" endtime="20180329 15:09:52.220"></status>
+<msg level="INFO" timestamp="20180402 10:08:49.532">Status Code Retornado: 400 -- Status Code Esperado: 400</msg>
+<status starttime="20180402 10:08:49.531" status="PASS" endtime="20180402 10:08:49.532"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:52.219" endtime="20180329 15:09:52.220"></status>
+<status starttime="20180402 10:08:49.531" status="PASS" endtime="20180402 10:08:49.532"></status>
 </kw>
 <tags>
 <tag>inválido</tag>
 </tags>
-<status critical="yes" status="PASS" starttime="20180329 15:09:51.446" endtime="20180329 15:09:52.221"></status>
+<status critical="yes" starttime="20180402 10:08:48.482" status="PASS" endtime="20180402 10:08:49.532"></status>
 </test>
-<test id="s1-t4" name="4. Cenário: Buscar por CEP &quot;vazio&quot; (404 - Not Found)">
-<kw library="keyword_GET" name="Dado que esteja conectado na API &quot;viacep&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<test name="4. Cenário: Buscar por CEP &quot;vazio&quot; (404 - Not Found)" id="s1-t4">
+<kw name="Dado que esteja conectado na API &quot;viacep&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_VALIDO}/${HOST_cont}</arg>
+<arg>disable_warnings=1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.222">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:52.222" endtime="20180329 15:09:52.223"></status>
+<msg level="INFO" timestamp="20180402 10:08:49.534">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws/13086-510/json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:49.533" status="PASS" endtime="20180402 10:08:49.534"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:52.222" endtime="20180329 15:09:52.223"></status>
+<status starttime="20180402 10:08:49.533" status="PASS" endtime="20180402 10:08:49.534"></status>
 </kw>
-<kw library="keyword_GET" name="Quando o usuário consultar o CEP &quot;&quot;">
-<kw library="RequestsLibrary" name="Create Session">
+<kw name="Quando o usuário consultar o CEP &quot;&quot;" library="keyword_GET">
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
 <arg>${HOST}/${CEP_VAZIO}/${HOST_cont}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.223">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws//json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20180329 15:09:52.223" endtime="20180329 15:09:52.224"></status>
+<msg level="INFO" timestamp="20180402 10:08:49.535">Creating Session using : alias=Consulta_CEP, url=https://viacep.com.br/ws//json/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status starttime="20180402 10:08:49.535" status="PASS" endtime="20180402 10:08:49.535"></status>
 </kw>
-<kw library="RequestsLibrary" name="Get Request">
+<kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
 <arguments>
 <arg>Consulta_CEP</arg>
@@ -370,18 +368,16 @@
 <assign>
 <var>${RETORNO_GET}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 15:09:52.997">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
-<msg level="INFO" timestamp="20180329 15:09:52.997">/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)</msg>
-<msg level="INFO" timestamp="20180329 15:09:52.997">${RETORNO_GET} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:52.224" endtime="20180329 15:09:52.997"></status>
+<msg level="INFO" timestamp="20180402 10:08:50.355">Get Request using : alias=Consulta_CEP, uri=/, headers=None json=None</msg>
+<msg level="INFO" timestamp="20180402 10:08:50.356">${RETORNO_GET} = &lt;Response [404]&gt;</msg>
+<status starttime="20180402 10:08:49.535" status="PASS" endtime="20180402 10:08:50.356"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Resposta: ${RETORNO_GET.text}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.998">Resposta: &lt;!DOCTYPE HTML&gt;
+<msg level="INFO" timestamp="20180402 10:08:50.356">Resposta: &lt;!DOCTYPE HTML&gt;
 &lt;html lang="pt-br"&gt;
 
 &lt;head&gt;
@@ -412,52 +408,52 @@
 
 &lt;/html&gt;
 </msg>
-<status status="PASS" starttime="20180329 15:09:52.997" endtime="20180329 15:09:52.998"></status>
+<status starttime="20180402 10:08:50.356" status="PASS" endtime="20180402 10:08:50.356"></status>
 </kw>
-<kw library="BuiltIn" name="Set Test Variable">
+<kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${RETORNO_GET}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.998">${RETORNO_GET} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:52.998" endtime="20180329 15:09:52.998"></status>
+<msg level="INFO" timestamp="20180402 10:08:50.357">${RETORNO_GET} = &lt;Response [404]&gt;</msg>
+<status starttime="20180402 10:08:50.356" status="PASS" endtime="20180402 10:08:50.357"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:52.223" endtime="20180329 15:09:52.998"></status>
+<status starttime="20180402 10:08:49.534" status="PASS" endtime="20180402 10:08:50.357"></status>
 </kw>
-<kw library="keyword_GET" name="Então deve ser retornado status &quot;404&quot;">
-<kw library="BuiltIn" name="Should Be Equal As Strings">
+<kw name="Então deve ser retornado status &quot;404&quot;" library="keyword_GET">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${RETORNO_GET.status_code}</arg>
 <arg>${STATUS_404}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:52.999">Argument types are:
+<msg level="INFO" timestamp="20180402 10:08:50.357">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180329 15:09:52.999" endtime="20180329 15:09:52.999"></status>
+<status starttime="20180402 10:08:50.357" status="PASS" endtime="20180402 10:08:50.358"></status>
 </kw>
-<kw library="BuiltIn" name="Log">
+<kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Status Code Retornado: ${RETORNO_GET.status_code} -- Status Code Esperado: ${STATUS_404}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 15:09:53.000">Status Code Retornado: 404 -- Status Code Esperado: 404</msg>
-<status status="PASS" starttime="20180329 15:09:52.999" endtime="20180329 15:09:53.000"></status>
+<msg level="INFO" timestamp="20180402 10:08:50.358">Status Code Retornado: 404 -- Status Code Esperado: 404</msg>
+<status starttime="20180402 10:08:50.358" status="PASS" endtime="20180402 10:08:50.358"></status>
 </kw>
-<status status="PASS" starttime="20180329 15:09:52.999" endtime="20180329 15:09:53.000"></status>
+<status starttime="20180402 10:08:50.357" status="PASS" endtime="20180402 10:08:50.358"></status>
 </kw>
 <tags>
 <tag>vazio</tag>
 </tags>
-<status critical="yes" status="PASS" starttime="20180329 15:09:52.221" endtime="20180329 15:09:53.000"></status>
+<status critical="yes" starttime="20180402 10:08:49.532" status="PASS" endtime="20180402 10:08:50.358"></status>
 </test>
 <doc>Consulta de CEPS pela API aberta: https://viacep.com.br/ws/&lt;CEP&gt;/json/</doc>
-<status status="PASS" starttime="20180329 15:09:49.559" endtime="20180329 15:09:53.001"></status>
+<status starttime="20180402 10:08:46.581" status="PASS" endtime="20180402 10:08:50.359"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0">Critical Tests</stat>
-<stat pass="4" fail="0">All Tests</stat>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
 </total>
 <tag>
 <stat fail="0" pass="1">inexistente</stat>
@@ -466,7 +462,7 @@
 <stat fail="0" pass="1">vazio</stat>
 </tag>
 <suite>
-<stat id="s1" name="GET" fail="0" pass="4">GET</stat>
+<stat fail="0" id="s1" pass="4" name="GET">GET</stat>
 </suite>
 </statistics>
 <errors>

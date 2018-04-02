@@ -1,92 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180329 14:18:15.923" generator="Robot 3.0.2 (Python 3.5.2 on linux)">
+<robot generator="Robot 3.0.2 (Python 3.5.2 on linux)" generated="20180402 10:05:07.015">
 <suite id="s1" name="consulta CEP" source="/projetos_robot_framework/correios_web/features/consulta_CEP.robot">
 <test id="s1-t1" name="1. Cenário: Buscar por CEP válido (SP)">
-<kw library="keyword_consulta_CEP" name="Dado que eu esteja na Página dos Correios">
-<kw library="home" name="Home.Load">
-<kw library="SeleniumLibrary" name="Open Browser">
+<kw name="Dado que eu esteja na Página dos Correios" library="keyword_consulta_CEP">
+<kw name="Home.Load" library="home">
+<kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:16.229">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:16.228" endtime="20180329 14:18:22.037"></status>
+<msg timestamp="20180402 10:05:07.182" level="INFO">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:09.187" status="PASS" starttime="20180402 10:05:07.182"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20180329 14:18:22.037" endtime="20180329 14:18:22.139"></status>
+<status endtime="20180402 10:05:09.291" status="PASS" starttime="20180402 10:05:09.188"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:16.228" endtime="20180329 14:18:22.140"></status>
+<status endtime="20180402 10:05:09.292" status="PASS" starttime="20180402 10:05:07.181"></status>
 </kw>
-<kw library="home" name="Home.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="Home.VerifyPage" library="home">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:22.151">Current location contains 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:22.140" endtime="20180329 14:18:22.151"></status>
+<msg timestamp="20180402 10:05:09.298" level="INFO">Current location contains 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:09.298" status="PASS" starttime="20180402 10:05:09.293"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180402 10:05:10.298" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:10.299" status="PASS" starttime="20180402 10:05:09.298"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>${idCorreios}</arg>
+<arg>${BUSCA_CEP_LITERAL}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:22.151" endtime="20180329 14:18:22.174"></status>
+<status endtime="20180402 10:05:10.315" status="PASS" starttime="20180402 10:05:10.299"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:22.140" endtime="20180329 14:18:22.175"></status>
+<status endtime="20180402 10:05:10.315" status="PASS" starttime="20180402 10:05:09.293"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:16.228" endtime="20180329 14:18:22.175"></status>
+<status endtime="20180402 10:05:10.315" status="PASS" starttime="20180402 10:05:07.181"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Quando eu informar o CEP &quot;13086-510&quot; no campo &quot;Busca CEP ou Endereço&quot;">
-<kw library="home" name="Home.InputCEP">
+<kw name="Quando eu informar o CEP &quot;13086-510&quot; no campo &quot;Busca CEP ou Endereço&quot;" library="keyword_consulta_CEP">
+<kw name="Home.InputCEP" library="home">
 <arguments>
 <arg>${CEP_SP}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Input Text">
+<kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${BUSCA_CEP}</arg>
 <arg>${CEP_VALIDO}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:22.177">Typing text '13086-510' into text field 'acesso-busca'.</msg>
-<status status="PASS" starttime="20180329 14:18:22.176" endtime="20180329 14:18:22.265"></status>
+<msg timestamp="20180402 10:05:10.317" level="INFO">Typing text '13086-510' into text field 'acesso-busca'.</msg>
+<status endtime="20180402 10:05:10.416" status="PASS" starttime="20180402 10:05:10.316"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:22.176" endtime="20180329 14:18:22.265"></status>
+<status endtime="20180402 10:05:10.417" status="PASS" starttime="20180402 10:05:10.316"></status>
 </kw>
-<kw library="home" name="Home.ConsultaCEP">
-<kw library="SeleniumLibrary" name="Click Element">
+<kw name="Home.ConsultaCEP" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${LUPA_CONSULTA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:22.267">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
-<status status="PASS" starttime="20180329 14:18:22.266" endtime="20180329 14:18:22.380"></status>
+<msg timestamp="20180402 10:05:10.417" level="INFO">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
+<status endtime="20180402 10:05:10.556" status="PASS" starttime="20180402 10:05:10.417"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:22.266" endtime="20180329 14:18:22.381"></status>
+<status endtime="20180402 10:05:10.557" status="PASS" starttime="20180402 10:05:10.417"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:22.176" endtime="20180329 14:18:22.381"></status>
+<status endtime="20180402 10:05:10.558" status="PASS" starttime="20180402 10:05:10.316"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Então é apresentada a Página &quot;buscaCep&quot;">
-<kw library="BuiltIn" name="Sleep">
+<kw name="Então é apresentada a Página &quot;buscaCep&quot;" library="keyword_consulta_CEP">
+<kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:23.383">Slept 1 second</msg>
-<status status="PASS" starttime="20180329 14:18:22.382" endtime="20180329 14:18:23.383"></status>
+<msg timestamp="20180402 10:05:11.560" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:11.561" status="PASS" starttime="20180402 10:05:10.560"></status>
 </kw>
-<kw library="contrib_proxima_aba" name="contrib_proxima_aba">
-<kw library="SeleniumLibrary" name="List Windows">
+<kw name="contrib_proxima_aba" library="contrib_proxima_aba">
+<kw name="List Windows" library="SeleniumLibrary">
 <doc>Deprecated. Use `Get Window Handles` instead.</doc>
 <assign>
 <var>@{windows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:23.386">@{windows} = [ CDwindow-D0FB22E3EE18DD243238EB8D5DBB2495 | CDwindow-604907A54BE2A8F3D4116BD00D459D97 ]</msg>
-<status status="PASS" starttime="20180329 14:18:23.384" endtime="20180329 14:18:23.386"></status>
+<msg timestamp="20180402 10:05:11.564" level="INFO">@{windows} = [ CDwindow-2D42991AE023B498621E338F9051DAD | CDwindow-9B84432E960FFAC7A2BCBA20CC44A0CA ]</msg>
+<status endtime="20180402 10:05:11.564" status="PASS" starttime="20180402 10:05:11.561"></status>
 </kw>
-<kw library="BuiltIn" name="Get Length">
+<kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
 <arguments>
 <arg>${windows}</arg>
@@ -94,11 +102,11 @@
 <assign>
 <var>${numWindows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:23.387">Length is 2</msg>
-<msg level="INFO" timestamp="20180329 14:18:23.387">${numWindows} = 2</msg>
-<status status="PASS" starttime="20180329 14:18:23.387" endtime="20180329 14:18:23.387"></status>
+<msg timestamp="20180402 10:05:11.565" level="INFO">Length is 2</msg>
+<msg timestamp="20180402 10:05:11.565" level="INFO">${numWindows} = 2</msg>
+<status endtime="20180402 10:05:11.565" status="PASS" starttime="20180402 10:05:11.564"></status>
 </kw>
-<kw library="BuiltIn" name="Evaluate">
+<kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
 <arg>${numWindows}-1</arg>
@@ -106,112 +114,112 @@
 <assign>
 <var>${indexLast}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:23.387">${indexLast} = 1</msg>
-<status status="PASS" starttime="20180329 14:18:23.387" endtime="20180329 14:18:23.387"></status>
+<msg timestamp="20180402 10:05:11.566" level="INFO">${indexLast} = 1</msg>
+<status endtime="20180402 10:05:11.566" status="PASS" starttime="20180402 10:05:11.566"></status>
 </kw>
-<kw library="BuiltIn" name="Should Be True">
+<kw name="Should Be True" library="BuiltIn">
 <doc>Fails if the given condition is not true.</doc>
 <arguments>
 <arg>${numWindows} &gt; 1</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:23.388" endtime="20180329 14:18:23.388"></status>
+<status endtime="20180402 10:05:11.567" status="PASS" starttime="20180402 10:05:11.567"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Select Window">
+<kw name="Select Window" library="SeleniumLibrary">
 <doc>Selects browser window matching ``locator``.</doc>
 <arguments>
 <arg>@{windows}[${indexLast}]</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:23.388" endtime="20180329 14:18:23.431"></status>
+<status endtime="20180402 10:05:11.675" status="PASS" starttime="20180402 10:05:11.568"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:23.384" endtime="20180329 14:18:23.432"></status>
+<status endtime="20180402 10:05:11.677" status="PASS" starttime="20180402 10:05:11.561"></status>
 </kw>
-<kw library="buscaCEP" name="buscaCEP.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="buscaCEP.VerifyPage" library="buscaCEP">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${URL_BUSCA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:34.044">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
-<status status="PASS" starttime="20180329 14:18:23.433" endtime="20180329 14:18:34.044"></status>
+<msg timestamp="20180402 10:05:11.769" level="INFO">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
+<status endtime="20180402 10:05:11.769" status="PASS" starttime="20180402 10:05:11.679"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${TEXT_BUSCA_CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.044" endtime="20180329 14:18:34.059"></status>
+<status endtime="20180402 10:05:11.813" status="PASS" starttime="20180402 10:05:11.770"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:23.432" endtime="20180329 14:18:34.059"></status>
+<status endtime="20180402 10:05:11.813" status="PASS" starttime="20180402 10:05:11.678"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:22.382" endtime="20180329 14:18:34.060"></status>
+<status endtime="20180402 10:05:11.813" status="PASS" starttime="20180402 10:05:10.559"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o campo &quot;Logradouro/Nome&quot;: &quot;Rua Doutor Ricardo Benetton Martins&quot;">
-<kw library="buscaCEP" name="buscaCEP.Logradouro">
+<kw name="E o campo &quot;Logradouro/Nome&quot;: &quot;Rua Doutor Ricardo Benetton Martins&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Logradouro" library="buscaCEP">
 <arguments>
 <arg>${LOGRADOURO_SP}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${LOGRADOURO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.062" endtime="20180329 14:18:34.074"></status>
+<status endtime="20180402 10:05:11.852" status="PASS" starttime="20180402 10:05:11.815"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.061" endtime="20180329 14:18:34.075"></status>
+<status endtime="20180402 10:05:11.852" status="PASS" starttime="20180402 10:05:11.815"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.060" endtime="20180329 14:18:34.075"></status>
+<status endtime="20180402 10:05:11.852" status="PASS" starttime="20180402 10:05:11.814"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o &quot;Bairro/Distrito&quot;: &quot;Polo II de Alta Tecnologia (Campinas)&quot;">
-<kw library="buscaCEP" name="buscaCEP.Bairro">
+<kw name="E o &quot;Bairro/Distrito&quot;: &quot;Polo II de Alta Tecnologia (Campinas)&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Bairro" library="buscaCEP">
 <arguments>
 <arg>${BAIRRO_SP}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${BAIRRO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.076" endtime="20180329 14:18:34.088"></status>
+<status endtime="20180402 10:05:11.870" status="PASS" starttime="20180402 10:05:11.853"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.075" endtime="20180329 14:18:34.089"></status>
+<status endtime="20180402 10:05:11.870" status="PASS" starttime="20180402 10:05:11.853"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.075" endtime="20180329 14:18:34.089"></status>
+<status endtime="20180402 10:05:11.870" status="PASS" starttime="20180402 10:05:11.852"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E a &quot;Localidade/UF: &quot;Campinas/SP&quot;">
-<kw library="buscaCEP" name="buscaCEP.Localidade">
+<kw name="E a &quot;Localidade/UF: &quot;Campinas/SP&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Localidade" library="buscaCEP">
 <arguments>
 <arg>${LOCALIDADE_SP}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${LOCALIDADE}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.091" endtime="20180329 14:18:34.104"></status>
+<status endtime="20180402 10:05:11.888" status="PASS" starttime="20180402 10:05:11.872"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.090" endtime="20180329 14:18:34.104"></status>
+<status endtime="20180402 10:05:11.888" status="PASS" starttime="20180402 10:05:11.872"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.090" endtime="20180329 14:18:34.104"></status>
+<status endtime="20180402 10:05:11.889" status="PASS" starttime="20180402 10:05:11.871"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o &quot;CEP&quot;: 13086-510">
-<kw library="buscaCEP" name="buscaCEP.CEP">
+<kw name="E o &quot;CEP&quot;: 13086-510" library="keyword_consulta_CEP">
+<kw name="buscaCEP.CEP" library="buscaCEP">
 <arguments>
 <arg>${CEP_SP}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.105" endtime="20180329 14:18:34.117"></status>
+<status endtime="20180402 10:05:11.906" status="PASS" starttime="20180402 10:05:11.890"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.105" endtime="20180329 14:18:34.117"></status>
+<status endtime="20180402 10:05:11.906" status="PASS" starttime="20180402 10:05:11.890"></status>
 </kw>
-<kw library="contrib_screenshot" name="contrib_screenshot">
+<kw name="contrib_screenshot" library="contrib_screenshot">
 <arguments>
 <arg>1_CEP_Polis_Sucesso</arg>
 </arguments>
-<kw library="DateTime" name="Get Current Date">
+<kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <arguments>
 <arg>result_format=%Y%m%d-%H%M</arg>
@@ -219,123 +227,131 @@
 <assign>
 <var>${DATE}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:34.118">${DATE} = 20180329-1418</msg>
-<status status="PASS" starttime="20180329 14:18:34.118" endtime="20180329 14:18:34.118"></status>
+<msg timestamp="20180402 10:05:11.908" level="INFO">${DATE} = 20180402-1005</msg>
+<status endtime="20180402 10:05:11.908" status="PASS" starttime="20180402 10:05:11.907"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Set Screenshot Directory">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <doc>Sets the directory for captured screenshots.</doc>
 <arguments>
 <arg>${PATH}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:34.118" endtime="20180329 14:18:34.119"></status>
+<status endtime="20180402 10:05:11.909" status="PASS" starttime="20180402 10:05:11.908"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Capture Page Screenshot">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
 <arguments>
 <arg>${PATH}/${filename}-${DATE}.${TYPE OF FILE}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:34.219" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/1_CEP_Polis_Sucesso-20180329-1418.png"&gt;&lt;img src="evidencias/1_CEP_Polis_Sucesso-20180329-1418.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20180329 14:18:34.119" endtime="20180329 14:18:34.219"></status>
+<msg timestamp="20180402 10:05:12.037" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/1_CEP_Polis_Sucesso-20180402-1005.png"&gt;&lt;img src="evidencias/1_CEP_Polis_Sucesso-20180402-1005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20180402 10:05:12.037" status="PASS" starttime="20180402 10:05:11.909"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.117" endtime="20180329 14:18:34.219"></status>
+<status endtime="20180402 10:05:12.038" status="PASS" starttime="20180402 10:05:11.907"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.104" endtime="20180329 14:18:34.219"></status>
+<status endtime="20180402 10:05:12.038" status="PASS" starttime="20180402 10:05:11.889"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Close Browser" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180329 14:18:34.219" endtime="20180329 14:18:34.276"></status>
+<status endtime="20180402 10:05:12.097" status="PASS" starttime="20180402 10:05:12.038"></status>
 </kw>
 <tags>
 <tag>smoke</tag>
 </tags>
-<status status="PASS" starttime="20180329 14:18:16.227" critical="yes" endtime="20180329 14:18:34.276"></status>
+<status endtime="20180402 10:05:12.097" status="PASS" starttime="20180402 10:05:07.180" critical="yes"></status>
 </test>
 <test id="s1-t2" name="2. Cenário: Buscar por CEP inválido">
-<kw library="keyword_consulta_CEP" name="Dado que eu esteja na Página dos Correios">
-<kw library="home" name="Home.Load">
-<kw library="SeleniumLibrary" name="Open Browser">
+<kw name="Dado que eu esteja na Página dos Correios" library="keyword_consulta_CEP">
+<kw name="Home.Load" library="home">
+<kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:34.279">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:34.279" endtime="20180329 14:18:41.591"></status>
+<msg timestamp="20180402 10:05:12.102" level="INFO">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:15.076" status="PASS" starttime="20180402 10:05:12.101"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20180329 14:18:41.592" endtime="20180329 14:18:41.702"></status>
+<status endtime="20180402 10:05:15.180" status="PASS" starttime="20180402 10:05:15.077"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.278" endtime="20180329 14:18:41.703"></status>
+<status endtime="20180402 10:05:15.181" status="PASS" starttime="20180402 10:05:12.101"></status>
 </kw>
-<kw library="home" name="Home.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="Home.VerifyPage" library="home">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:41.707">Current location contains 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:41.703" endtime="20180329 14:18:41.707"></status>
+<msg timestamp="20180402 10:05:15.192" level="INFO">Current location contains 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:15.193" status="PASS" starttime="20180402 10:05:15.182"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180402 10:05:16.193" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:16.194" status="PASS" starttime="20180402 10:05:15.193"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>${idCorreios}</arg>
+<arg>${BUSCA_CEP_LITERAL}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:41.707" endtime="20180329 14:18:41.721"></status>
+<status endtime="20180402 10:05:16.208" status="PASS" starttime="20180402 10:05:16.194"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:41.703" endtime="20180329 14:18:41.722"></status>
+<status endtime="20180402 10:05:16.208" status="PASS" starttime="20180402 10:05:15.181"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:34.278" endtime="20180329 14:18:41.722"></status>
+<status endtime="20180402 10:05:16.209" status="PASS" starttime="20180402 10:05:12.100"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Quando eu informar &quot;!@$%*(&quot; no campo &quot;Busca CEP ou Endereço&quot;">
-<kw library="home" name="Home.InputCEP">
+<kw name="Quando eu informar &quot;!@$%*(&quot; no campo &quot;Busca CEP ou Endereço&quot;" library="keyword_consulta_CEP">
+<kw name="Home.InputCEP" library="home">
 <arguments>
 <arg>${CEP_INVALIDO}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Input Text">
+<kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${BUSCA_CEP}</arg>
 <arg>${CEP_VALIDO}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:41.723">Typing text '!@$%*(' into text field 'acesso-busca'.</msg>
-<status status="PASS" starttime="20180329 14:18:41.723" endtime="20180329 14:18:41.833"></status>
+<msg timestamp="20180402 10:05:16.210" level="INFO">Typing text '!@$%*(' into text field 'acesso-busca'.</msg>
+<status endtime="20180402 10:05:16.299" status="PASS" starttime="20180402 10:05:16.209"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:41.722" endtime="20180329 14:18:41.833"></status>
+<status endtime="20180402 10:05:16.299" status="PASS" starttime="20180402 10:05:16.209"></status>
 </kw>
-<kw library="home" name="Home.ConsultaCEP">
-<kw library="SeleniumLibrary" name="Click Element">
+<kw name="Home.ConsultaCEP" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${LUPA_CONSULTA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:41.834">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
-<status status="PASS" starttime="20180329 14:18:41.834" endtime="20180329 14:18:41.967"></status>
+<msg timestamp="20180402 10:05:16.300" level="INFO">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
+<status endtime="20180402 10:05:16.440" status="PASS" starttime="20180402 10:05:16.300"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:41.834" endtime="20180329 14:18:41.967"></status>
+<status endtime="20180402 10:05:16.441" status="PASS" starttime="20180402 10:05:16.300"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:41.722" endtime="20180329 14:18:41.967"></status>
+<status endtime="20180402 10:05:16.441" status="PASS" starttime="20180402 10:05:16.209"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Então é apresentada a Página &quot;buscaCep&quot;">
-<kw library="BuiltIn" name="Sleep">
+<kw name="Então é apresentada a Página &quot;buscaCep&quot;" library="keyword_consulta_CEP">
+<kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:42.969">Slept 1 second</msg>
-<status status="PASS" starttime="20180329 14:18:41.968" endtime="20180329 14:18:42.969"></status>
+<msg timestamp="20180402 10:05:17.443" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:17.443" status="PASS" starttime="20180402 10:05:16.443"></status>
 </kw>
-<kw library="contrib_proxima_aba" name="contrib_proxima_aba">
-<kw library="SeleniumLibrary" name="List Windows">
+<kw name="contrib_proxima_aba" library="contrib_proxima_aba">
+<kw name="List Windows" library="SeleniumLibrary">
 <doc>Deprecated. Use `Get Window Handles` instead.</doc>
 <assign>
 <var>@{windows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:42.972">@{windows} = [ CDwindow-A1908945FDCC3A06C9D50CA0CE215860 | CDwindow-B253E5BDEDEA3311E50D5BA1A414F15E ]</msg>
-<status status="PASS" starttime="20180329 14:18:42.970" endtime="20180329 14:18:42.972"></status>
+<msg timestamp="20180402 10:05:17.447" level="INFO">@{windows} = [ CDwindow-1EEF7E0EDB9A1C47D9107249FFD9FB47 | CDwindow-A13B2AF98C370BFA6A7CE89140C77EED ]</msg>
+<status endtime="20180402 10:05:17.447" status="PASS" starttime="20180402 10:05:17.445"></status>
 </kw>
-<kw library="BuiltIn" name="Get Length">
+<kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
 <arguments>
 <arg>${windows}</arg>
@@ -343,11 +359,11 @@
 <assign>
 <var>${numWindows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:42.973">Length is 2</msg>
-<msg level="INFO" timestamp="20180329 14:18:42.973">${numWindows} = 2</msg>
-<status status="PASS" starttime="20180329 14:18:42.973" endtime="20180329 14:18:42.973"></status>
+<msg timestamp="20180402 10:05:17.448" level="INFO">Length is 2</msg>
+<msg timestamp="20180402 10:05:17.448" level="INFO">${numWindows} = 2</msg>
+<status endtime="20180402 10:05:17.448" status="PASS" starttime="20180402 10:05:17.447"></status>
 </kw>
-<kw library="BuiltIn" name="Evaluate">
+<kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
 <arg>${numWindows}-1</arg>
@@ -355,61 +371,61 @@
 <assign>
 <var>${indexLast}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:42.974">${indexLast} = 1</msg>
-<status status="PASS" starttime="20180329 14:18:42.974" endtime="20180329 14:18:42.974"></status>
+<msg timestamp="20180402 10:05:17.448" level="INFO">${indexLast} = 1</msg>
+<status endtime="20180402 10:05:17.448" status="PASS" starttime="20180402 10:05:17.448"></status>
 </kw>
-<kw library="BuiltIn" name="Should Be True">
+<kw name="Should Be True" library="BuiltIn">
 <doc>Fails if the given condition is not true.</doc>
 <arguments>
 <arg>${numWindows} &gt; 1</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:42.974" endtime="20180329 14:18:42.974"></status>
+<status endtime="20180402 10:05:17.449" status="PASS" starttime="20180402 10:05:17.448"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Select Window">
+<kw name="Select Window" library="SeleniumLibrary">
 <doc>Selects browser window matching ``locator``.</doc>
 <arguments>
 <arg>@{windows}[${indexLast}]</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:42.975" endtime="20180329 14:18:43.024"></status>
+<status endtime="20180402 10:05:17.521" status="PASS" starttime="20180402 10:05:17.449"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:42.969" endtime="20180329 14:18:43.025"></status>
+<status endtime="20180402 10:05:17.522" status="PASS" starttime="20180402 10:05:17.444"></status>
 </kw>
-<kw library="buscaCEP" name="buscaCEP.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="buscaCEP.VerifyPage" library="buscaCEP">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${URL_BUSCA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:44.228">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
-<status status="PASS" starttime="20180329 14:18:43.026" endtime="20180329 14:18:44.228"></status>
+<msg timestamp="20180402 10:05:20.057" level="INFO">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
+<status endtime="20180402 10:05:20.058" status="PASS" starttime="20180402 10:05:17.524"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${TEXT_BUSCA_CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:44.229" endtime="20180329 14:18:44.243"></status>
+<status endtime="20180402 10:05:20.073" status="PASS" starttime="20180402 10:05:20.058"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:43.025" endtime="20180329 14:18:44.244"></status>
+<status endtime="20180402 10:05:20.074" status="PASS" starttime="20180402 10:05:17.522"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:41.967" endtime="20180329 14:18:44.244"></status>
+<status endtime="20180402 10:05:20.074" status="PASS" starttime="20180402 10:05:16.442"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E a mensagem &quot;DADOS INVALIDOS/NAO INFORMADO&quot;">
-<kw library="buscaCEP" name="buscaCEP.MsgDadosInvalidos">
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="E a mensagem &quot;DADOS INVALIDOS/NAO INFORMADO&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.MsgDadosInvalidos" library="buscaCEP">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${MSG_ERRO_INVALIDO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:44.245" endtime="20180329 14:18:44.256"></status>
+<status endtime="20180402 10:05:20.089" status="PASS" starttime="20180402 10:05:20.075"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:44.244" endtime="20180329 14:18:44.257"></status>
+<status endtime="20180402 10:05:20.089" status="PASS" starttime="20180402 10:05:20.075"></status>
 </kw>
-<kw library="contrib_screenshot" name="contrib_screenshot">
+<kw name="contrib_screenshot" library="contrib_screenshot">
 <arguments>
 <arg>2_CEP_Invalido</arg>
 </arguments>
-<kw library="DateTime" name="Get Current Date">
+<kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <arguments>
 <arg>result_format=%Y%m%d-%H%M</arg>
@@ -417,123 +433,131 @@
 <assign>
 <var>${DATE}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:44.257">${DATE} = 20180329-1418</msg>
-<status status="PASS" starttime="20180329 14:18:44.257" endtime="20180329 14:18:44.258"></status>
+<msg timestamp="20180402 10:05:20.090" level="INFO">${DATE} = 20180402-1005</msg>
+<status endtime="20180402 10:05:20.090" status="PASS" starttime="20180402 10:05:20.090"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Set Screenshot Directory">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <doc>Sets the directory for captured screenshots.</doc>
 <arguments>
 <arg>${PATH}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:44.258" endtime="20180329 14:18:44.258"></status>
+<status endtime="20180402 10:05:20.090" status="PASS" starttime="20180402 10:05:20.090"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Capture Page Screenshot">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
 <arguments>
 <arg>${PATH}/${filename}-${DATE}.${TYPE OF FILE}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:44.359" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/2_CEP_Invalido-20180329-1418.png"&gt;&lt;img src="evidencias/2_CEP_Invalido-20180329-1418.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20180329 14:18:44.258" endtime="20180329 14:18:44.359"></status>
+<msg timestamp="20180402 10:05:20.202" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/2_CEP_Invalido-20180402-1005.png"&gt;&lt;img src="evidencias/2_CEP_Invalido-20180402-1005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20180402 10:05:20.202" status="PASS" starttime="20180402 10:05:20.090"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:44.257" endtime="20180329 14:18:44.359"></status>
+<status endtime="20180402 10:05:20.202" status="PASS" starttime="20180402 10:05:20.089"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:44.244" endtime="20180329 14:18:44.359"></status>
+<status endtime="20180402 10:05:20.203" status="PASS" starttime="20180402 10:05:20.074"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Close Browser" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180329 14:18:44.360" endtime="20180329 14:18:44.432"></status>
+<status endtime="20180402 10:05:20.261" status="PASS" starttime="20180402 10:05:20.203"></status>
 </kw>
 <tags>
 <tag>invalido</tag>
 </tags>
-<status status="PASS" starttime="20180329 14:18:34.277" critical="yes" endtime="20180329 14:18:44.432"></status>
+<status endtime="20180402 10:05:20.261" status="PASS" starttime="20180402 10:05:12.099" critical="yes"></status>
 </test>
 <test id="s1-t3" name="3. Cenário: Buscar por CEP inexistente">
-<kw library="keyword_consulta_CEP" name="Dado que eu esteja na Página dos Correios">
-<kw library="home" name="Home.Load">
-<kw library="SeleniumLibrary" name="Open Browser">
+<kw name="Dado que eu esteja na Página dos Correios" library="keyword_consulta_CEP">
+<kw name="Home.Load" library="home">
+<kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:44.436">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:44.436" endtime="20180329 14:18:49.505"></status>
+<msg timestamp="20180402 10:05:20.263" level="INFO">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:23.420" status="PASS" starttime="20180402 10:05:20.263"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20180329 14:18:49.505" endtime="20180329 14:18:49.608"></status>
+<status endtime="20180402 10:05:23.525" status="PASS" starttime="20180402 10:05:23.421"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:44.435" endtime="20180329 14:18:49.608"></status>
+<status endtime="20180402 10:05:23.525" status="PASS" starttime="20180402 10:05:20.263"></status>
 </kw>
-<kw library="home" name="Home.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="Home.VerifyPage" library="home">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:49.612">Current location contains 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:49.608" endtime="20180329 14:18:49.612"></status>
+<msg timestamp="20180402 10:05:23.531" level="INFO">Current location contains 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:23.531" status="PASS" starttime="20180402 10:05:23.526"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180402 10:05:24.532" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:24.532" status="PASS" starttime="20180402 10:05:23.531"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>${idCorreios}</arg>
+<arg>${BUSCA_CEP_LITERAL}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:49.613" endtime="20180329 14:18:49.629"></status>
+<status endtime="20180402 10:05:24.547" status="PASS" starttime="20180402 10:05:24.532"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:49.608" endtime="20180329 14:18:49.629"></status>
+<status endtime="20180402 10:05:24.548" status="PASS" starttime="20180402 10:05:23.525"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:44.434" endtime="20180329 14:18:49.629"></status>
+<status endtime="20180402 10:05:24.548" status="PASS" starttime="20180402 10:05:20.263"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Quando eu informar &quot;99999-999&quot; no campo &quot;Busca CEP ou Endereço&quot;">
-<kw library="home" name="Home.InputCEP">
+<kw name="Quando eu informar &quot;99999-999&quot; no campo &quot;Busca CEP ou Endereço&quot;" library="keyword_consulta_CEP">
+<kw name="Home.InputCEP" library="home">
 <arguments>
 <arg>${CEP_INEXISTENTE}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Input Text">
+<kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${BUSCA_CEP}</arg>
 <arg>${CEP_VALIDO}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:49.631">Typing text '99999-999' into text field 'acesso-busca'.</msg>
-<status status="PASS" starttime="20180329 14:18:49.631" endtime="20180329 14:18:49.760"></status>
+<msg timestamp="20180402 10:05:24.549" level="INFO">Typing text '99999-999' into text field 'acesso-busca'.</msg>
+<status endtime="20180402 10:05:24.659" status="PASS" starttime="20180402 10:05:24.549"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:49.630" endtime="20180329 14:18:49.761"></status>
+<status endtime="20180402 10:05:24.660" status="PASS" starttime="20180402 10:05:24.549"></status>
 </kw>
-<kw library="home" name="Home.ConsultaCEP">
-<kw library="SeleniumLibrary" name="Click Element">
+<kw name="Home.ConsultaCEP" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${LUPA_CONSULTA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:49.762">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
-<status status="PASS" starttime="20180329 14:18:49.761" endtime="20180329 14:18:49.905"></status>
+<msg timestamp="20180402 10:05:24.660" level="INFO">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
+<status endtime="20180402 10:05:24.791" status="PASS" starttime="20180402 10:05:24.660"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:49.761" endtime="20180329 14:18:49.906"></status>
+<status endtime="20180402 10:05:24.793" status="PASS" starttime="20180402 10:05:24.660"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:49.630" endtime="20180329 14:18:49.906"></status>
+<status endtime="20180402 10:05:24.793" status="PASS" starttime="20180402 10:05:24.548"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Então é apresentada a Página &quot;buscaCep&quot;">
-<kw library="BuiltIn" name="Sleep">
+<kw name="Então é apresentada a Página &quot;buscaCep&quot;" library="keyword_consulta_CEP">
+<kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:50.908">Slept 1 second</msg>
-<status status="PASS" starttime="20180329 14:18:49.907" endtime="20180329 14:18:50.908"></status>
+<msg timestamp="20180402 10:05:25.795" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:25.796" status="PASS" starttime="20180402 10:05:24.794"></status>
 </kw>
-<kw library="contrib_proxima_aba" name="contrib_proxima_aba">
-<kw library="SeleniumLibrary" name="List Windows">
+<kw name="contrib_proxima_aba" library="contrib_proxima_aba">
+<kw name="List Windows" library="SeleniumLibrary">
 <doc>Deprecated. Use `Get Window Handles` instead.</doc>
 <assign>
 <var>@{windows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:50.910">@{windows} = [ CDwindow-30ABDF21E971DE9D44760234179B85B9 | CDwindow-FB1F1F2F342A4B27588E660D70C06AF ]</msg>
-<status status="PASS" starttime="20180329 14:18:50.909" endtime="20180329 14:18:50.910"></status>
+<msg timestamp="20180402 10:05:25.798" level="INFO">@{windows} = [ CDwindow-FCEE49928BC110FA80B89B1985B04BCF | CDwindow-5796BAA84C1912C18EF8F21D78A694D ]</msg>
+<status endtime="20180402 10:05:25.798" status="PASS" starttime="20180402 10:05:25.797"></status>
 </kw>
-<kw library="BuiltIn" name="Get Length">
+<kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
 <arguments>
 <arg>${windows}</arg>
@@ -541,11 +565,11 @@
 <assign>
 <var>${numWindows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:50.911">Length is 2</msg>
-<msg level="INFO" timestamp="20180329 14:18:50.911">${numWindows} = 2</msg>
-<status status="PASS" starttime="20180329 14:18:50.910" endtime="20180329 14:18:50.911"></status>
+<msg timestamp="20180402 10:05:25.799" level="INFO">Length is 2</msg>
+<msg timestamp="20180402 10:05:25.799" level="INFO">${numWindows} = 2</msg>
+<status endtime="20180402 10:05:25.799" status="PASS" starttime="20180402 10:05:25.798"></status>
 </kw>
-<kw library="BuiltIn" name="Evaluate">
+<kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
 <arg>${numWindows}-1</arg>
@@ -553,61 +577,61 @@
 <assign>
 <var>${indexLast}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:50.911">${indexLast} = 1</msg>
-<status status="PASS" starttime="20180329 14:18:50.911" endtime="20180329 14:18:50.911"></status>
+<msg timestamp="20180402 10:05:25.799" level="INFO">${indexLast} = 1</msg>
+<status endtime="20180402 10:05:25.799" status="PASS" starttime="20180402 10:05:25.799"></status>
 </kw>
-<kw library="BuiltIn" name="Should Be True">
+<kw name="Should Be True" library="BuiltIn">
 <doc>Fails if the given condition is not true.</doc>
 <arguments>
 <arg>${numWindows} &gt; 1</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:50.911" endtime="20180329 14:18:50.912"></status>
+<status endtime="20180402 10:05:25.800" status="PASS" starttime="20180402 10:05:25.799"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Select Window">
+<kw name="Select Window" library="SeleniumLibrary">
 <doc>Selects browser window matching ``locator``.</doc>
 <arguments>
 <arg>@{windows}[${indexLast}]</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:50.912" endtime="20180329 14:18:50.961"></status>
+<status endtime="20180402 10:05:25.864" status="PASS" starttime="20180402 10:05:25.800"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:50.908" endtime="20180329 14:18:50.961"></status>
+<status endtime="20180402 10:05:25.865" status="PASS" starttime="20180402 10:05:25.796"></status>
 </kw>
-<kw library="buscaCEP" name="buscaCEP.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="buscaCEP.VerifyPage" library="buscaCEP">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${URL_BUSCA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:51.489">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
-<status status="PASS" starttime="20180329 14:18:50.962" endtime="20180329 14:18:51.490"></status>
+<msg timestamp="20180402 10:05:25.900" level="INFO">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
+<status endtime="20180402 10:05:25.900" status="PASS" starttime="20180402 10:05:25.865"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${TEXT_BUSCA_CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:51.490" endtime="20180329 14:18:51.511"></status>
+<status endtime="20180402 10:05:25.920" status="PASS" starttime="20180402 10:05:25.901"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:50.962" endtime="20180329 14:18:51.511"></status>
+<status endtime="20180402 10:05:25.920" status="PASS" starttime="20180402 10:05:25.865"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:49.906" endtime="20180329 14:18:51.511"></status>
+<status endtime="20180402 10:05:25.920" status="PASS" starttime="20180402 10:05:24.794"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E a mensagem &quot;DADOS NAO ENCONTRADOS&quot;">
-<kw library="buscaCEP" name="buscaCEP.MsgDadosInexistentes">
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="E a mensagem &quot;DADOS NAO ENCONTRADOS&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.MsgDadosInexistentes" library="buscaCEP">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${MSG_ERRO_INEXISTENTE}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:51.513" endtime="20180329 14:18:51.528"></status>
+<status endtime="20180402 10:05:25.938" status="PASS" starttime="20180402 10:05:25.921"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:51.512" endtime="20180329 14:18:51.528"></status>
+<status endtime="20180402 10:05:25.938" status="PASS" starttime="20180402 10:05:25.921"></status>
 </kw>
-<kw library="contrib_screenshot" name="contrib_screenshot">
+<kw name="contrib_screenshot" library="contrib_screenshot">
 <arguments>
 <arg>3_CEP_Inexistente</arg>
 </arguments>
-<kw library="DateTime" name="Get Current Date">
+<kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <arguments>
 <arg>result_format=%Y%m%d-%H%M</arg>
@@ -615,123 +639,131 @@
 <assign>
 <var>${DATE}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:51.530">${DATE} = 20180329-1418</msg>
-<status status="PASS" starttime="20180329 14:18:51.529" endtime="20180329 14:18:51.530"></status>
+<msg timestamp="20180402 10:05:25.939" level="INFO">${DATE} = 20180402-1005</msg>
+<status endtime="20180402 10:05:25.939" status="PASS" starttime="20180402 10:05:25.939"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Set Screenshot Directory">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <doc>Sets the directory for captured screenshots.</doc>
 <arguments>
 <arg>${PATH}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:51.530" endtime="20180329 14:18:51.531"></status>
+<status endtime="20180402 10:05:25.940" status="PASS" starttime="20180402 10:05:25.939"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Capture Page Screenshot">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
 <arguments>
 <arg>${PATH}/${filename}-${DATE}.${TYPE OF FILE}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:51.637" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/3_CEP_Inexistente-20180329-1418.png"&gt;&lt;img src="evidencias/3_CEP_Inexistente-20180329-1418.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20180329 14:18:51.531" endtime="20180329 14:18:51.637"></status>
+<msg timestamp="20180402 10:05:26.064" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/3_CEP_Inexistente-20180402-1005.png"&gt;&lt;img src="evidencias/3_CEP_Inexistente-20180402-1005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20180402 10:05:26.064" status="PASS" starttime="20180402 10:05:25.940"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:51.529" endtime="20180329 14:18:51.637"></status>
+<status endtime="20180402 10:05:26.064" status="PASS" starttime="20180402 10:05:25.938"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:51.512" endtime="20180329 14:18:51.637"></status>
+<status endtime="20180402 10:05:26.064" status="PASS" starttime="20180402 10:05:25.920"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Close Browser" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180329 14:18:51.638" endtime="20180329 14:18:51.695"></status>
+<status endtime="20180402 10:05:26.126" status="PASS" starttime="20180402 10:05:26.065"></status>
 </kw>
 <tags>
 <tag>inexistente</tag>
 </tags>
-<status status="PASS" starttime="20180329 14:18:44.433" critical="yes" endtime="20180329 14:18:51.696"></status>
+<status endtime="20180402 10:05:26.126" status="PASS" starttime="20180402 10:05:20.262" critical="yes"></status>
 </test>
 <test id="s1-t4" name="4. Cenário: Buscar por CEP válido (RJ)">
-<kw library="keyword_consulta_CEP" name="Dado que eu esteja na Página dos Correios">
-<kw library="home" name="Home.Load">
-<kw library="SeleniumLibrary" name="Open Browser">
+<kw name="Dado que eu esteja na Página dos Correios" library="keyword_consulta_CEP">
+<kw name="Home.Load" library="home">
+<kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:51.700">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:51.699" endtime="20180329 14:18:56.964"></status>
+<msg timestamp="20180402 10:05:26.129" level="INFO">Opening browser 'chrome' to base url 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:29.203" status="PASS" starttime="20180402 10:05:26.129"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20180329 14:18:56.964" endtime="20180329 14:18:57.073"></status>
+<status endtime="20180402 10:05:29.308" status="PASS" starttime="20180402 10:05:29.203"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:51.698" endtime="20180329 14:18:57.073"></status>
+<status endtime="20180402 10:05:29.308" status="PASS" starttime="20180402 10:05:26.128"></status>
 </kw>
-<kw library="home" name="Home.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="Home.VerifyPage" library="home">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${HOME_CORREIOS}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:57.079">Current location contains 'http://www.correios.com.br/'.</msg>
-<status status="PASS" starttime="20180329 14:18:57.074" endtime="20180329 14:18:57.079"></status>
+<msg timestamp="20180402 10:05:29.314" level="INFO">Current location contains 'http://www.correios.com.br/'.</msg>
+<status endtime="20180402 10:05:29.315" status="PASS" starttime="20180402 10:05:29.309"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180402 10:05:30.315" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:30.316" status="PASS" starttime="20180402 10:05:29.315"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>${idCorreios}</arg>
+<arg>${BUSCA_CEP_LITERAL}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:57.079" endtime="20180329 14:18:57.093"></status>
+<status endtime="20180402 10:05:30.331" status="PASS" starttime="20180402 10:05:30.316"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:57.074" endtime="20180329 14:18:57.093"></status>
+<status endtime="20180402 10:05:30.332" status="PASS" starttime="20180402 10:05:29.308"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:51.698" endtime="20180329 14:18:57.093"></status>
+<status endtime="20180402 10:05:30.332" status="PASS" starttime="20180402 10:05:26.127"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Quando eu informar o CEP &quot;20020-021&quot; no campo &quot;Busca CEP ou Endereço&quot;">
-<kw library="home" name="Home.InputCEP">
+<kw name="Quando eu informar o CEP &quot;20020-021&quot; no campo &quot;Busca CEP ou Endereço&quot;" library="keyword_consulta_CEP">
+<kw name="Home.InputCEP" library="home">
 <arguments>
 <arg>${CEP_RJ}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Input Text">
+<kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>${BUSCA_CEP}</arg>
 <arg>${CEP_VALIDO}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:57.095">Typing text '20020-021' into text field 'acesso-busca'.</msg>
-<status status="PASS" starttime="20180329 14:18:57.094" endtime="20180329 14:18:57.201"></status>
+<msg timestamp="20180402 10:05:30.333" level="INFO">Typing text '20020-021' into text field 'acesso-busca'.</msg>
+<status endtime="20180402 10:05:30.437" status="PASS" starttime="20180402 10:05:30.333"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:57.094" endtime="20180329 14:18:57.201"></status>
+<status endtime="20180402 10:05:30.437" status="PASS" starttime="20180402 10:05:30.333"></status>
 </kw>
-<kw library="home" name="Home.ConsultaCEP">
-<kw library="SeleniumLibrary" name="Click Element">
+<kw name="Home.ConsultaCEP" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${LUPA_CONSULTA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:57.202">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
-<status status="PASS" starttime="20180329 14:18:57.202" endtime="20180329 14:18:57.333"></status>
+<msg timestamp="20180402 10:05:30.438" level="INFO">Clicking element '//div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']'.</msg>
+<status endtime="20180402 10:05:30.592" status="PASS" starttime="20180402 10:05:30.437"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:57.202" endtime="20180329 14:18:57.334"></status>
+<status endtime="20180402 10:05:30.593" status="PASS" starttime="20180402 10:05:30.437"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:57.093" endtime="20180329 14:18:57.334"></status>
+<status endtime="20180402 10:05:30.593" status="PASS" starttime="20180402 10:05:30.332"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="Então é apresentada a Página &quot;buscaCep&quot;">
-<kw library="BuiltIn" name="Sleep">
+<kw name="Então é apresentada a Página &quot;buscaCep&quot;" library="keyword_consulta_CEP">
+<kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:58.336">Slept 1 second</msg>
-<status status="PASS" starttime="20180329 14:18:57.335" endtime="20180329 14:18:58.336"></status>
+<msg timestamp="20180402 10:05:31.597" level="INFO">Slept 1 second</msg>
+<status endtime="20180402 10:05:31.597" status="PASS" starttime="20180402 10:05:30.596"></status>
 </kw>
-<kw library="contrib_proxima_aba" name="contrib_proxima_aba">
-<kw library="SeleniumLibrary" name="List Windows">
+<kw name="contrib_proxima_aba" library="contrib_proxima_aba">
+<kw name="List Windows" library="SeleniumLibrary">
 <doc>Deprecated. Use `Get Window Handles` instead.</doc>
 <assign>
 <var>@{windows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:58.338">@{windows} = [ CDwindow-99D9A7CE7021C233D0A6EF6EB86CA0E | CDwindow-69F1B18DA53636B013D9073EE11DA086 ]</msg>
-<status status="PASS" starttime="20180329 14:18:58.337" endtime="20180329 14:18:58.338"></status>
+<msg timestamp="20180402 10:05:31.599" level="INFO">@{windows} = [ CDwindow-DB2C30460A9A2C73124FAD33A3CC192F | CDwindow-D1D415D3249B34C097E31F088F336BAD ]</msg>
+<status endtime="20180402 10:05:31.600" status="PASS" starttime="20180402 10:05:31.598"></status>
 </kw>
-<kw library="BuiltIn" name="Get Length">
+<kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
 <arguments>
 <arg>${windows}</arg>
@@ -739,11 +771,11 @@
 <assign>
 <var>${numWindows}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:58.339">Length is 2</msg>
-<msg level="INFO" timestamp="20180329 14:18:58.339">${numWindows} = 2</msg>
-<status status="PASS" starttime="20180329 14:18:58.339" endtime="20180329 14:18:58.339"></status>
+<msg timestamp="20180402 10:05:31.600" level="INFO">Length is 2</msg>
+<msg timestamp="20180402 10:05:31.600" level="INFO">${numWindows} = 2</msg>
+<status endtime="20180402 10:05:31.600" status="PASS" starttime="20180402 10:05:31.600"></status>
 </kw>
-<kw library="BuiltIn" name="Evaluate">
+<kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
 <arg>${numWindows}-1</arg>
@@ -751,112 +783,112 @@
 <assign>
 <var>${indexLast}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:58.340">${indexLast} = 1</msg>
-<status status="PASS" starttime="20180329 14:18:58.340" endtime="20180329 14:18:58.340"></status>
+<msg timestamp="20180402 10:05:31.601" level="INFO">${indexLast} = 1</msg>
+<status endtime="20180402 10:05:31.601" status="PASS" starttime="20180402 10:05:31.600"></status>
 </kw>
-<kw library="BuiltIn" name="Should Be True">
+<kw name="Should Be True" library="BuiltIn">
 <doc>Fails if the given condition is not true.</doc>
 <arguments>
 <arg>${numWindows} &gt; 1</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:58.340" endtime="20180329 14:18:58.341"></status>
+<status endtime="20180402 10:05:31.601" status="PASS" starttime="20180402 10:05:31.601"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Select Window">
+<kw name="Select Window" library="SeleniumLibrary">
 <doc>Selects browser window matching ``locator``.</doc>
 <arguments>
 <arg>@{windows}[${indexLast}]</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:58.341" endtime="20180329 14:18:58.386"></status>
+<status endtime="20180402 10:05:31.664" status="PASS" starttime="20180402 10:05:31.601"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:58.336" endtime="20180329 14:18:58.386"></status>
+<status endtime="20180402 10:05:31.665" status="PASS" starttime="20180402 10:05:31.597"></status>
 </kw>
-<kw library="buscaCEP" name="buscaCEP.VerifyPage">
-<kw library="SeleniumLibrary" name="Location Should Contain">
+<kw name="buscaCEP.VerifyPage" library="buscaCEP">
+<kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>${URL_BUSCA_CEP}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:59.053">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
-<status status="PASS" starttime="20180329 14:18:58.387" endtime="20180329 14:18:59.053"></status>
+<msg timestamp="20180402 10:05:35.487" level="INFO">Current location contains 'http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t'.</msg>
+<status endtime="20180402 10:05:35.488" status="PASS" starttime="20180402 10:05:31.666"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${TEXT_BUSCA_CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.054" endtime="20180329 14:18:59.068"></status>
+<status endtime="20180402 10:05:35.508" status="PASS" starttime="20180402 10:05:35.488"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:58.386" endtime="20180329 14:18:59.068"></status>
+<status endtime="20180402 10:05:35.508" status="PASS" starttime="20180402 10:05:31.665"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:57.334" endtime="20180329 14:18:59.068"></status>
+<status endtime="20180402 10:05:35.508" status="PASS" starttime="20180402 10:05:30.596"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o campo &quot;Logradouro/Nome&quot;: &quot;Rua Santa Luzia - até 405 - lado ímpar&quot;">
-<kw library="buscaCEP" name="buscaCEP.Logradouro">
+<kw name="E o campo &quot;Logradouro/Nome&quot;: &quot;Rua Santa Luzia - até 405 - lado ímpar&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Logradouro" library="buscaCEP">
 <arguments>
 <arg>${LOGRADOURO_RJ}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${LOGRADOURO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.069" endtime="20180329 14:18:59.085"></status>
+<status endtime="20180402 10:05:35.524" status="PASS" starttime="20180402 10:05:35.510"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.069" endtime="20180329 14:18:59.085"></status>
+<status endtime="20180402 10:05:35.524" status="PASS" starttime="20180402 10:05:35.509"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.069" endtime="20180329 14:18:59.085"></status>
+<status endtime="20180402 10:05:35.524" status="PASS" starttime="20180402 10:05:35.509"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o &quot;Bairro/Distrito&quot;: &quot;Centro&quot;">
-<kw library="buscaCEP" name="buscaCEP.Bairro">
+<kw name="E o &quot;Bairro/Distrito&quot;: &quot;Centro&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Bairro" library="buscaCEP">
 <arguments>
 <arg>${BAIRRO_RJ}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${BAIRRO}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.086" endtime="20180329 14:18:59.100"></status>
+<status endtime="20180402 10:05:35.539" status="PASS" starttime="20180402 10:05:35.525"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.086" endtime="20180329 14:18:59.101"></status>
+<status endtime="20180402 10:05:35.539" status="PASS" starttime="20180402 10:05:35.525"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.085" endtime="20180329 14:18:59.101"></status>
+<status endtime="20180402 10:05:35.539" status="PASS" starttime="20180402 10:05:35.525"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E a &quot;Localidade/UF: &quot;Rio de Janeiro/RJ&quot;">
-<kw library="buscaCEP" name="buscaCEP.Localidade">
+<kw name="E a &quot;Localidade/UF: &quot;Rio de Janeiro/RJ&quot;" library="keyword_consulta_CEP">
+<kw name="buscaCEP.Localidade" library="buscaCEP">
 <arguments>
 <arg>${LOCALIDADE_RJ}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${LOCALIDADE}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.102" endtime="20180329 14:18:59.114"></status>
+<status endtime="20180402 10:05:35.553" status="PASS" starttime="20180402 10:05:35.541"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.101" endtime="20180329 14:18:59.114"></status>
+<status endtime="20180402 10:05:35.554" status="PASS" starttime="20180402 10:05:35.541"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.101" endtime="20180329 14:18:59.114"></status>
+<status endtime="20180402 10:05:35.554" status="PASS" starttime="20180402 10:05:35.540"></status>
 </kw>
-<kw library="keyword_consulta_CEP" name="E o &quot;CEP&quot;: 20020-021">
-<kw library="buscaCEP" name="buscaCEP.CEP">
+<kw name="E o &quot;CEP&quot;: 20020-021" library="keyword_consulta_CEP">
+<kw name="buscaCEP.CEP" library="buscaCEP">
 <arguments>
 <arg>${CEP_RJ}</arg>
 </arguments>
-<kw library="SeleniumLibrary" name="Wait Until Page Contains">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>${CEP}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.115" endtime="20180329 14:18:59.128"></status>
+<status endtime="20180402 10:05:35.568" status="PASS" starttime="20180402 10:05:35.555"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.115" endtime="20180329 14:18:59.128"></status>
+<status endtime="20180402 10:05:35.568" status="PASS" starttime="20180402 10:05:35.554"></status>
 </kw>
-<kw library="contrib_screenshot" name="contrib_screenshot">
+<kw name="contrib_screenshot" library="contrib_screenshot">
 <arguments>
 <arg>4_CEP_RJ_Sucesso</arg>
 </arguments>
-<kw library="DateTime" name="Get Current Date">
+<kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <arguments>
 <arg>result_format=%Y%m%d-%H%M</arg>
@@ -864,39 +896,39 @@
 <assign>
 <var>${DATE}</var>
 </assign>
-<msg level="INFO" timestamp="20180329 14:18:59.129">${DATE} = 20180329-1418</msg>
-<status status="PASS" starttime="20180329 14:18:59.129" endtime="20180329 14:18:59.130"></status>
+<msg timestamp="20180402 10:05:35.569" level="INFO">${DATE} = 20180402-1005</msg>
+<status endtime="20180402 10:05:35.569" status="PASS" starttime="20180402 10:05:35.569"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Set Screenshot Directory">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <doc>Sets the directory for captured screenshots.</doc>
 <arguments>
 <arg>${PATH}</arg>
 </arguments>
-<status status="PASS" starttime="20180329 14:18:59.130" endtime="20180329 14:18:59.130"></status>
+<status endtime="20180402 10:05:35.570" status="PASS" starttime="20180402 10:05:35.570"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Capture Page Screenshot">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
 <arguments>
 <arg>${PATH}/${filename}-${DATE}.${TYPE OF FILE}</arg>
 </arguments>
-<msg level="INFO" timestamp="20180329 14:18:59.240" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/4_CEP_RJ_Sucesso-20180329-1418.png"&gt;&lt;img src="evidencias/4_CEP_RJ_Sucesso-20180329-1418.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20180329 14:18:59.130" endtime="20180329 14:18:59.240"></status>
+<msg timestamp="20180402 10:05:35.682" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencias/4_CEP_RJ_Sucesso-20180402-1005.png"&gt;&lt;img src="evidencias/4_CEP_RJ_Sucesso-20180402-1005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20180402 10:05:35.682" status="PASS" starttime="20180402 10:05:35.570"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.128" endtime="20180329 14:18:59.240"></status>
+<status endtime="20180402 10:05:35.682" status="PASS" starttime="20180402 10:05:35.569"></status>
 </kw>
-<status status="PASS" starttime="20180329 14:18:59.114" endtime="20180329 14:18:59.240"></status>
+<status endtime="20180402 10:05:35.682" status="PASS" starttime="20180402 10:05:35.554"></status>
 </kw>
-<kw library="SeleniumLibrary" name="Close Browser" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180329 14:18:59.241" endtime="20180329 14:18:59.316"></status>
+<status endtime="20180402 10:05:35.740" status="PASS" starttime="20180402 10:05:35.683"></status>
 </kw>
 <tags>
 <tag>RJ</tag>
 </tags>
-<status status="PASS" starttime="20180329 14:18:51.697" critical="yes" endtime="20180329 14:18:59.317"></status>
+<status endtime="20180402 10:05:35.741" status="PASS" starttime="20180402 10:05:26.127" critical="yes"></status>
 </test>
 <doc>Acesso à pagina dos Correios para busca de CEPs</doc>
-<status status="PASS" starttime="20180329 14:18:15.924" endtime="20180329 14:18:59.318"></status>
+<status endtime="20180402 10:05:35.742" status="PASS" starttime="20180402 10:05:07.016"></status>
 </suite>
 <statistics>
 <total>
@@ -904,13 +936,13 @@
 <stat pass="4" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">inexistente</stat>
-<stat fail="0" pass="1">invalido</stat>
-<stat fail="0" pass="1">RJ</stat>
-<stat fail="0" pass="1">smoke</stat>
+<stat pass="1" fail="0">inexistente</stat>
+<stat pass="1" fail="0">invalido</stat>
+<stat pass="1" fail="0">RJ</stat>
+<stat pass="1" fail="0">smoke</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" name="consulta CEP" id="s1">consulta CEP</stat>
+<stat id="s1" name="consulta CEP" pass="4" fail="0">consulta CEP</stat>
 </suite>
 </statistics>
 <errors>

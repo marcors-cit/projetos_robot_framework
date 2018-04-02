@@ -6,7 +6,7 @@ Library                         SeleniumLibrary
 *** Variables ***
 
 ${HOME_CORREIOS}                http://www.correios.com.br/
-${idCorreios}                   idCorreios
+${BUSCA_CEP_LITERAL}            Busca CEP ou Endereço
 ${BUSCA_CEP}                    acesso-busca
 ${LUPA_CONSULTA_CEP}            //div[@id='content-servicos']/ul//form[@action='http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t']//input[@title='Consultar']
 
@@ -20,7 +20,8 @@ Home.Load
 
 Home.VerifyPage
     Location Should Contain     ${HOME_CORREIOS}
-    Wait Until Page Contains    ${idCorreios}
+    sleep                           1
+    Wait Until Page Contains    ${BUSCA_CEP_LITERAL}
 
 
 Home.InputCEP

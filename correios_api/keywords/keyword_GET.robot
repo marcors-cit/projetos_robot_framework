@@ -30,10 +30,11 @@ ${ERRO}                     True
 
 #1. Cenário: Buscar por CEP válido (200 - OK)
 Dado que esteja conectado na API "viacep"
-    Create Session          Consulta_CEP    ${HOST}/${CEP_VALIDO}/${HOST_cont}
+    Create Session          Consulta_CEP    ${HOST}/${CEP_VALIDO}/${HOST_cont}      disable_warnings=1
 
 Quando o usuário consultar o CEP "13086-510"
     ${RETORNO_GET}=        Get Request      Consulta_CEP        /    timeout=3
+
     Log                 Resposta: ${RETORNO_GET.text}
     Set Test Variable       ${RETORNO_GET}
 
